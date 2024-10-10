@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import LocationsAPI from '../services/LocationsAPI'
-import unitygrid from '../assets/unitygrid.jpg'
-import '../css/Locations.css'
-
+import React, { useState, useEffect } from 'react';
+import { getAllLocations } from '../services/LocationsAPI'; 
+import unitygrid from '../assets/unitygrid.jpg';
+import '../css/Locations.css';
 const Locations = () => {
 
     const [locations, setLocations] = useState([])

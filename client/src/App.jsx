@@ -1,9 +1,9 @@
-import React from 'react'
-import { useRoutes, Link } from 'react-router-dom'
-import Locations from './pages/Locations'
-import LocationEvents from './pages/LocationEvents'
-import Events from './pages/Events'
-import './App.css'
+import React from 'react';
+import { useRoutes, Link } from 'react-router-dom';
+import Locations from './pages/Locations';
+import LocationEvents from './pages/LocationEvents';
+import Events from './pages/Events';
+import './App.css';
 
 const App = () => {
   let element = useRoutes([
@@ -12,30 +12,21 @@ const App = () => {
       element: <Locations />
     },
     {
-      path: '/echolounge',
-      element: <LocationEvents index={1} />
-    },
-    {
-      path: '/houseofblues',
-      element: <LocationEvents index={2} />
-    },
-    {
-      path: '/pavilion',
-      element: <LocationEvents index={3} />
-    },
-    {
-      path: '/americanairlines',
-      element: <LocationEvents index={4} />
+      path: '/locations/:locationId',
+      element: <LocationEvents />
     },
     {
       path: '/events',
       element: <Events />
+    },
+    {
+      path: '*',
+      element: <div>404 Page Not Found</div> // Fallback for undefined routes
     }
-  ])
+  ]);
 
   return (
     <div className='app'>
-
       <header className='main-header'>
         <h1>UnityGrid Plaza</h1>
 
@@ -49,7 +40,7 @@ const App = () => {
         {element}
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
